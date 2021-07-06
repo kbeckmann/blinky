@@ -159,6 +159,11 @@ filesets:
       - kcu1500/blinky_kcu1500.v : {file_type : verilogSource}
       - kcu1500/blinky.xdc : {file_type : xdc}
 
+  kria_kv260:
+    files:
+      - kria_kv260/blinky_kria_kv260.v : {file_type : verilogSource}
+      - kria_kv260/blinky.xdc : {file_type : xdc}
+
   machXO2_breakout:
     files:
       - machXO2_breakout/blinky.lpf : {file_type : LPF}
@@ -672,6 +677,15 @@ targets:
       vivado:
         part : xcku115-flvb2104-2-e
     toplevel : blinky_kcu1500
+
+  kria_kv260:
+    default_tool : vivado
+    description : Kria KV260 Vision AI Starter Kit (Kria K26 SOM)
+    filesets : [rtl, kria_kv260]
+    tools:
+      vivado:
+        part : xck26-sfvc784-2lv-c
+    toplevel : blinky_kria_kv260
 
   machXO2_breakout:
     default_tool : diamond
